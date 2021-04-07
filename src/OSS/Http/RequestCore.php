@@ -789,6 +789,7 @@ class RequestCore
         }
 
         // As long as this came back as a valid resource...
+        // fixed php >=8.0 高版本返回 CurlHandle 实例 代替原来是 是 rescouce 类型 
         if (is_resource($curl_handle) || is_object($curl_handle) ) {
             // Determine what's what.
             $header_size = curl_getinfo($curl_handle, CURLINFO_HEADER_SIZE);
